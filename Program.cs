@@ -35,8 +35,9 @@ namespace doan_phantan
 
  
         public static String connstr_publisher = "Data Source=LAPTOP-BB4P1S1G;Initial Catalog=HeThongPhanTan;User ID=sa;password=123;TrustServerCertificate=true";
-       // public static String connstr_client = "Data Source=192.168.134.16,1433;Initial Catalog=HeThongPhanTan-V4;User ID=sa;password=19001005;TrustServerCertificate=true";
-        public static String connstr_client = "Data Source=LAPTOP-BB4P1S1G;Initial Catalog=HeThongPhanTan-V1;User ID=sa;password=123;TrustServerCertificate=true";
+       // public static String connstr_client = "Data Source=192.168.1.11,1433;Initial Catalog=HeThongPhanTan-V4;User ID=sa;password=19001005;TrustServerCertificate=true";
+        // public static String connstr_client = "Data Source=LAPTOP-BB4P1S1G;Initial Catalog=HeThongPhanTan-V1;User ID=sa;password=123;TrustServerCertificate=true";
+        public static String connstr_client = "Data Source=192.168.1.10,1433;Initial Catalog=HeThongPhanTan;User ID=sa;password=12345678;TrustServerCertificate=true";
 
         public static int mChiNhanh = 0;
         public static BindingSource bds_dspm = new BindingSource();// giữ bds khi đăng nhập.
@@ -161,7 +162,7 @@ namespace doan_phantan
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Form frm1 = new Form1();
+            Form frm1 = new frmMain();
 
             Application.Run(frm1);
 

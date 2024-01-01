@@ -13,10 +13,10 @@ using System.Windows.Forms;
 
 namespace doan_phantan
 {
-    public partial class Form1 : Form
+    public partial class frmMain : Form
     {
         DataTable dt_DS_emp = new DataTable();
-        public Form1()
+        public frmMain()
         {
             InitializeComponent();
         }
@@ -185,13 +185,10 @@ namespace doan_phantan
 
         private async void btnBackup_Click(object sender, EventArgs e)
         {
-            SqlSyncProvider serverProvider = new SqlSyncProvider(Program.connstr_publisher);
-            SqlSyncProvider clientProvider = new SqlSyncProvider(Program.connstr_client);
-            var setup = new SyncSetup("employee");
-            SyncAgent agent = new SyncAgent(clientProvider, serverProvider);
-            var result = await agent.SynchronizeAsync(setup);
-            Console.WriteLine(result);
-            MessageBox.Show("Đồng bộ dữ liệu thành công", "Thông báo", MessageBoxButtons.OK);
+            Form frm2 = new frmConnect();
+            frm2.Show();
+
+           
 
         }
 
