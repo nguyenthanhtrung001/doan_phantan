@@ -23,17 +23,24 @@ namespace doan_phantan
 
         private async void btnConnect_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtIPv4.Text) && !string.IsNullOrEmpty(txtPort.Text) && !string.IsNullOrEmpty(txtLogin.Text) && !string.IsNullOrEmpty(txtPass.Text))
+            try
             {
-                Program.connstr_client = "Data Source=" + txtIPv4.Text + "," + txtPort.Text + ";Initial Catalog=HeThongPhanTan;User ID=" + txtLogin.Text + ";password=" + txtPass.Text + ";TrustServerCertificate=true";
+                if (!string.IsNullOrEmpty(txtIPv4.Text) && !string.IsNullOrEmpty(txtPort.Text) && !string.IsNullOrEmpty(txtLogin.Text) && !string.IsNullOrEmpty(txtPass.Text))
+                {
+                    Program.connstr_client = "Data Source=" + txtIPv4.Text + "," + txtPort.Text + ";Initial Catalog=HeThongPhanTan;User ID=" + txtLogin.Text + ";password=" + txtPass.Text + ";TrustServerCertificate=true";
 
-                SqlSyncProvider serverProvider = new SqlSyncProvider(Program.connstr_publisher);
-                SqlSyncProvider clientProvider = new SqlSyncProvider(Program.connstr_client);
-                var setup = new SyncSetup("employee");
-                SyncAgent agent = new SyncAgent(clientProvider, serverProvider);
-                var result = await agent.SynchronizeAsync(setup);
-                Console.WriteLine(result);
-                MessageBox.Show("Đồng bộ dữ liệu thành công", "Thông báo", MessageBoxButtons.OK);
+                    SqlSyncProvider serverProvider = new SqlSyncProvider(Program.connstr_publisher);
+                    SqlSyncProvider clientProvider = new SqlSyncProvider(Program.connstr_client);
+                    var setup = new SyncSetup("employee");
+                    SyncAgent agent = new SyncAgent(clientProvider, serverProvider);
+                    var result = await agent.SynchronizeAsync(setup);
+                    Console.WriteLine(result);
+                    MessageBox.Show("Đồng bộ dữ liệu thành công", "Thông báo", MessageBoxButtons.OK);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Đồng bộ dữ liệu Thất bại", "Thông báo", MessageBoxButtons.OK);
             }
         }
 
