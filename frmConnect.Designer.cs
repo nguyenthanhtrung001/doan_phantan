@@ -96,6 +96,7 @@ namespace doan_phantan
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(209, 26);
             this.txtLogin.TabIndex = 1;
+            this.txtLogin.Text = "sa";
             // 
             // txtPort
             // 
@@ -103,6 +104,7 @@ namespace doan_phantan
             this.txtPort.Name = "txtPort";
             this.txtPort.Size = new System.Drawing.Size(209, 26);
             this.txtPort.TabIndex = 1;
+            this.txtPort.Text = "1433";
             // 
             // label5
             // 
@@ -119,6 +121,7 @@ namespace doan_phantan
             this.txtIPv4.Name = "txtIPv4";
             this.txtIPv4.Size = new System.Drawing.Size(209, 26);
             this.txtIPv4.TabIndex = 1;
+            this.txtIPv4.Text = "192.168.";
             // 
             // label4
             // 
